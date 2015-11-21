@@ -1,0 +1,37 @@
+<!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>Jill Maxwell</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item {{ if eq .URL "/" }} active {{ end }}" href="/">Home</a>
+
+    {{ $thisperma := .Permalink }}
+    {{ range .Site.Pages.ByWeight }}
+      {{ if isset .Params "sidebar" }}
+        <a class="sidebar-nav-item {{ if eq .Permalink $thisperma }} active {{ end }}" href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    {{ end }}
+
+    <a class="sidebar-nav-item" href="https://www.linkedin.com/in/jill-maxwell-2b72825">LinkedIn</a>
+    <a class="sidebar-nav-item" href="http://www.jillmaxwell.com/2011/10/inaugural-post-realizing-legal-writing-2/">About</a>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>Publications</p>
+    <a class="sidebar-nav-item" href="https://workfamily.sas.upenn.edu/wfrn-repo/object/85cw4e7a2op8n1q1">Leveraging the Courts to Protect Women’s Fundamental Rights at the Intersection of Family-Wage Work Structures and Women’s Role as Wage Earner and Primary Caregiver, 20 Duke J. L. & Pol’y 127 (2012)
+    </a>
+    <a class="sidebar-nav-item" href="http://www.law.georgetown.edu/journals/gender/index.html">Unifying Title VII and Labor Law to Expand Working Class Women’s Access to Non-Traditional Occupations, 11 Geo. J. Gen.& Law 681 (2010)</a>
+    <a class="sidebar-nav-item" href="http://hosted.law.wisc.edu/wjlgs/issues/2006-fall/maxwell.pdf">Sexual Harassment at Home: Altering the Terms, Conditions and Privileges of Rental Housing for Section 8 Recipients, 21 Wis. Women’s L.J. 223 (2006)</a>
+    <a class="sidebar-nav-item" href="http://www.outtengolden.com/files/Pages_from_ABA-LEL_newsletter_Spring_07_class_ex_parte_contact.pdf">Whose Clients Are They? Contacting Putative Class Members, Lab. & Employ. Law (ABA/Labor and Employment Law Section) (Spring, 2007) (co-authored with Cara Greene)</a>
+  </div>
+  
+  <div class="sidebar-item">
+    <p>&copy; {{ .Site.LastChange.Year }}. All rights reserved.</p>
+  </div>
+</div>
