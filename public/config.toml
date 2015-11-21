@@ -1,0 +1,14 @@
+languageCode = "en-us"
+baseurl = "http://www.jillmaxwell.com/"
+canonifyurls = true
+
+[permalinks]
+post = ":year/:month/:title/"
+fixed = ":title/"
+
+[params]
+DateForm = "Jan 2 2006"
+Title = "plain language"
+Tagline = "Editorializing on Legal Writing & Law"
+Author = "Jill Maxwell"
+
